@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Taco Cloud</title>
+<link rel="stylesheet" th:href="@{/taco.css}" />
+</head>
+
+<body>
+
+	<form method="POST" th:action="@{/pet}" th:object="${pet}">
+		<div class="center">
+			<h1>Los datos de tu mascota</h1>
+
+			<img th:src="@{/images/pets.png}" />
+			<div class="element">
+				<a th:href="@{/design}" id="another">Registrar otra</a>
+			</div>
+		</div>
+		<div class="center">
+			<div th:if="${#fields.hasErrors()}">
+				<span class="validationError"> Por favor corriege el error y
+					reenvia </span>
+			</div>
+
+
+			<h3>Datos</h3>
+
+
+			<div class="element">
+				<div class="a">
+					<label for="deliveryName">Nombre: </label>
+				</div>
+
+				<div class="b">
+					<input type="text" th:field="*{name}" />
+				</div>
+
+				<div class="a">
+					<label for="deliveryStreet">Telefono: </label>
+				</div>
+								<div class="b">
+					<input type="text" th:field="*{phone}" />
+				</div>
+				<select th:field="*{type}">
+					<option th:value="'PERRO'" th:text="Perro"></option>
+					<option th:value="'GATO'" th:text="Gato"></option>
+					<option th:value="'OTRO'" th:text="Otro"></option>
+				</select>
+
+			</div>
+			<div class="d">
+				<input type="submit" value="Registrar" />
+			</div>
+		</div>
+
+
+
+	</form>
+
+</body>
+</html>

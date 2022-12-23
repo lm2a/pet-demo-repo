@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Mi registro de mascotas</title>
+<link rel="stylesheet" th:href="@{/taco.css}" />
+</head>
+<body>
+	<div class="center">
+		<h1>Bienvenido a...</h1>
+		<img th:src="@{/images/pets.png}" />
+		
+					<div class="element">
+				<a th:href="@{/pet}" id="another">Registrar mascota</a><br><br>
+				<a th:href="@{/pet/all}" id="another">Ver tod@s</a>
+			</div>
+	</div>
+</body>
+</html>

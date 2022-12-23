@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Mascotas en la nube</title>
+<link rel="stylesheet" th:href="@{/taco.css}" />
+</head>
+<body>
+		<div class="center">
+<h1>Bienvenido a Mascotas en la nube</h1>
+<img th:src="@{/images/pets.png}" />
+<h2>Todos</h2>
+<table class="center">
+        <tr th:each="pet : ${pets}">
+        <td th:text="${pet.name}"></td>
+                <td th:text="${pet.type}"></td>
+                        <td th:text="${pet.phone}"></td>
+        </tr>
+        
+</table>
+<!--<h2>Solo perros</h2>-->
+<!--<table class="center">-->
+<!--        <tr th:each="pet : ${dogs}">-->
+<!--        <td th:text="${pet.name}"></td>-->
+<!--                <td th:text="${pet.type}"></td>-->
+<!--                        <td th:text="${pet.phone}"></td>-->
+<!--        </tr>-->
+        
+<!--</table>-->
+</div>
+</body>
+</html>
